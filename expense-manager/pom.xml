@@ -30,7 +30,7 @@
 		<java.version>17</java.version>
 	</properties>
 	<dependencies>
-		        <!-- Spring Boot Web para API REST -->
+		<!-- Spring Boot Web para API REST -->
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-web</artifactId>
@@ -48,6 +48,32 @@
             <artifactId>spring-boot-starter-validation</artifactId>
         </dependency>
 
+         <!-- Spring Security para autenticación y autorización -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-security</artifactId>
+        </dependency>
+
+        <!-- JWT (JSON Web Token) -->
+        <dependency>
+            <groupId>io.jsonwebtoken</groupId>
+            <artifactId>jjwt-api</artifactId>
+            <version>0.13.0</version>
+        </dependency>
+        <dependency>
+            <groupId>io.jsonwebtoken</groupId>
+            <artifactId>jjwt-impl</artifactId>
+            <version>0.13.0</version>
+            <scope>runtime</scope>
+        </dependency>
+        <dependency>
+            <groupId>io.jsonwebtoken</groupId>
+            <artifactId>jjwt-jackson</artifactId>
+            <version>0.13.0</version>
+            <scope>runtime</scope>
+        </dependency>
+
+
         <!-- H2 Database (comentado, ya no usamos H2) -->
         <!--
         <dependency>
@@ -57,7 +83,7 @@
         </dependency>
         -->
 
-        <!-- PostgreSQL Driver (comentado por defecto, usar H2) -->
+        <!-- PostgreSQL Driver -->
         <dependency>
             <groupId>org.postgresql</groupId>
             <artifactId>postgresql</artifactId>
@@ -88,9 +114,9 @@
 	</dependencies>
 
 <build>
-        <plugins>
-            <plugin>
-                <groupId>org.springframework.boot</groupId>
+    <plugins>
+        <plugin>
+            <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
                 <configuration>
                     <excludes>
