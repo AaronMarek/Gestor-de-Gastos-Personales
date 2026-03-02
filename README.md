@@ -1,13 +1,13 @@
-# 💰 Gestor de Gastos Personales – Backend
+# Gestor de Gastos Personales – Backend
 
 API REST desarrollada con **Spring Boot** para la gestión de gastos personales asociados a usuarios.  
 El proyecto está pensado como **backend puro**, con una arquitectura clara, sin sobre-ingeniería y siguiendo buenas prácticas de desarrollo profesional.
 
-> 📌 Proyecto en desarrollo – este repositorio refleja una implementación progresiva y bien estructurada.
+>  Proyecto en desarrollo – este repositorio refleja una implementación progresiva y bien estructurada.
 
 ---
 
-## 🚀 Tecnologías utilizadas
+## Tecnologías utilizadas
 
 - **Java 17**
 - **Spring Boot**
@@ -19,7 +19,7 @@ El proyecto está pensado como **backend puro**, con una arquitectura clara, sin
 
 ---
 
-## 🏗️ Arquitectura
+## Arquitectura
 
 El proyecto sigue una **arquitectura en capas (layered architecture)**:
 
@@ -39,7 +39,7 @@ Separando claramente responsabilidades:
 
 ---
 
-## 🎯 Objetivo del proyecto
+## Objetivo del proyecto
 
 Este proyecto tiene como objetivo:
 
