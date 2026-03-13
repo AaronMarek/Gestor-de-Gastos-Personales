@@ -41,7 +41,7 @@ public class ExpenseService {
         expense.setDate(request.getDate());
         expense.setDescription(request.getDescription());
         expense.setUser(user);
-        
+
         Expense savedExpense = expenseRepository.save(expense);
         return convertToDto(savedExpense);
     }
@@ -140,6 +140,16 @@ public class ExpenseService {
             throw new ResourceNotFoundException("Gasto no encontrado con ID: " + id);
         }
         expenseRepository.deleteById(id);
+    }
+    
+    /**
+     * Verifica si el usuario autenticado es el propietario del gasto
+     * Usado en @PreAuthorize
+     */
+    public boolean isOwner(Long expenseId, String email) {
+        Expense expense = expenseRepository.findById(expenseId)
+            .orElse(null);
+        return expense != null && expense.getUser().getEmail().equals(email);
     }
     
     /**
