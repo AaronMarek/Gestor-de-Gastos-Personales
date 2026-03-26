@@ -93,13 +93,24 @@ public class UserService {
     }
     
     /**
-     * Convierte User a UserResponse
+     * Verifica si el usuario autenticado es el propietario del recurso
+     * Usado en @PreAuthorize
+     */
+    public boolean isOwner(Long userId, String email) {
+        User user = userRepository.findById(userId)
+            .orElse(null);
+        return user != null && user.getEmail().equals(email);
+    }
+    
+    /**
+     * Convierte User a UserResponseDto
      */
     private UserResponse convertToDto(User user) {
         UserResponse dto = new UserResponse();
         dto.setId(user.getId());
         dto.setEmail(user.getEmail());
         dto.setName(user.getName());
+        dto.setRole(user.getRole().name());
         dto.setCreatedAt(user.getCreatedAt());
         return dto;
     }
